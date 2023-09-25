@@ -21,3 +21,9 @@ function displayWeather(data) {
     $('#cityName').text(data.name);
     $('#temperature').text(`${data.main.temp}°F`);
     $('#weatherDescription').text(data.weather[0].description);
+
+    const iconCode = data.weather[0].icon;
+    const iconUrl = `https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/icons/${iconCode}.svg`;
+    $('#weatherIcon').attr('class', `fas fa-${iconCode}`);
+}
+});
